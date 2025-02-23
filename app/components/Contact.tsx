@@ -68,10 +68,10 @@ const Contact = () => {
                       Contact
                     </h2>
                     <h2 className="text-gray-800 text-base md:text-lg leading-8 tracking-wider mt-2">
-                      +91 8129164869 (Phone)
+                      +91 81291 64869 (Phone)
                     </h2>
                     <h2 className="text-gray-800 text-base md:text-lg leading-8 tracking-wider mt-2">
-                      +91 8078154338 (Cell)
+                      +91 80781 54338 (Cell)
                     </h2>
                   </div>
                   <div className="mt-4 md:mt-8">
