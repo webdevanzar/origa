@@ -57,8 +57,7 @@ const Contact = () => {
                     </h2>
                     <h2 className="text-gray-800 text-base md:text-lg leading-8 tracking-wider mt-2">
                       
-                      Global Buisness Centre, 
-                      Swapnil Enclave, Shanmugham Road Ernakulam, Kerala 682031 India
+                     Origa Networks, near Bustand, Melattur, Kerala 679326
 
 
                     </h2>
