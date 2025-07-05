@@ -1,4 +1,4 @@
-import { industries } from "@/constants";
+import { industries } from "@/lib";
 import { nanoid } from "nanoid";
 import Image from "next/image";
 import React from "react";

@@ -1,36 +1,140 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Origa - Modern Next.js Project
 
-## Getting Started
+A modern Next.js 15 application with TypeScript, Turbopack, and a well-organized src folder structure.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Next.js 15** with App Router
+- **TypeScript** for type safety
+- **Turbopack** for faster development builds
+- **Tailwind CSS** for styling
+- **Framer Motion** for animations
+- **Modern folder structure** with src organization
+
+## 📁 Project Structure
+
+```
+src/
+├── app/                    # Next.js App Router pages
+│   ├── globals.css        # Global styles
+│   ├── layout.tsx         # Root layout
+│   ├── page.tsx           # Home page
+│   └── services/          # Service pages
+├── components/            # React components
+│   ├── shared/           # Shared/reusable components
+│   │   ├── Card.tsx
+│   │   ├── Modal.tsx
+│   │   ├── MotionDiv.tsx
+│   │   ├── SonnerProvider.tsx
+│   │   └── TypingEffect.tsx
+│   ├── ui/               # UI components
+│   │   └── Robot.tsx
+│   ├── About.tsx
+│   ├── Banner.tsx
+│   ├── Blogs.tsx
+│   ├── ClientLogo.tsx
+│   ├── Contact.tsx
+│   ├── Features.tsx
+│   ├── Footer.tsx
+│   ├── Hero.tsx
+│   ├── Industries.tsx
+│   ├── Navbar.tsx
+│   ├── Services.tsx
+│   ├── Stat.tsx
+│   ├── Testimonial.tsx
+│   └── Whatsapp.tsx
+├── lib/                  # Library code and constants
+│   └── index.ts         # Exported constants and utilities
+├── types/               # TypeScript type definitions
+└── utils/               # Utility functions
+    └── cn.ts           # Class name utility
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Getting Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Prerequisites
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Node.js 18+ 
+- npm or yarn
 
-## Learn More
+### Installation
 
-To learn more about Next.js, take a look at the following resources:
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd origa
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+3. Run the development server:
+```bash
+npm run dev
+```
 
-## Deploy on Vercel
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📝 Available Scripts
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- `npm run dev` - Start development server with Turbopack
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
+
+## 🔧 Configuration
+
+### Next.js Config
+- Turbopack enabled for faster development
+- SVG support configured
+- Image optimization settings
+
+### TypeScript
+- Strict mode enabled
+- Path aliases configured (`@/*` points to `src/*`)
+- Modern module resolution
+
+### Tailwind CSS
+- Custom color palette
+- Custom animations
+- Optimized for src folder structure
+
+## 🎨 Styling
+
+The project uses Tailwind CSS with custom configurations:
+
+- **Custom Colors**: `btn` (#25ab79), `btnEnd` (#9c7a3d)
+- **Custom Animations**: Infinite scroll animation
+- **Responsive Design**: Mobile-first approach
+
+## 📱 Components
+
+### Main Components
+- **Hero**: Landing section with call-to-action
+- **About**: Company information section
+- **Services**: Service offerings display
+- **Features**: Key features showcase
+- **Contact**: Contact form and information
+- **Footer**: Site footer with links
+
+### Shared Components
+- **Card**: Reusable card component
+- **Modal**: Modal dialog component
+- **MotionDiv**: Framer Motion wrapper
+- **SonnerProvider**: Toast notifications
+- **TypingEffect**: Animated typing effect
+
+## 🚀 Deployment
+
+The project is ready for deployment on Vercel, Netlify, or any other platform that supports Next.js.
+
+### Vercel (Recommended)
+1. Push your code to GitHub
+2. Connect your repository to Vercel
+3. Deploy automatically
+
+## 📄 License
+
+This project is licensed under the MIT License.

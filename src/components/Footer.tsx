@@ -1,4 +1,4 @@
-import { navabar } from "@/constants";
+import { navabar } from "@/lib";
 import { nanoid } from "nanoid";
 import Image from "next/image";
 import Link from "next/link";

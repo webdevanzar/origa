@@ -1,12 +1,12 @@
 import React from "react";
-import bannerImage from "@/public/banner (2).jpg";
 import Image from "next/image";
 const Banner = () => {
   return (
     <section className="relative text-black bg-cover bg-center bg-no-repeat">
       <Image
-        src={bannerImage}
-        alt=""
+        src="/banner (2).jpg"
+        alt="banner"
+        fill  
         className="absolute w-full h-full object-cover"
       />
       <div className="absolute     w-full h-full bg-gradient-to-r from-white/95 to-white/25"></div>
@@ -16,7 +16,6 @@ const Banner = () => {
           <h1 className="text-3xl font-extrabold sm:text-5xl text-gray-800">
             Fusing Creativity,
             <strong className="block font-extrabold text-rose-700 leading-[70px]">
-              {" "}
               Connecting Brilliance.
             </strong>
           </h1>

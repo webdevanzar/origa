@@ -1,4 +1,4 @@
-import { blogs } from "@/constants";
+import { blogs } from "@/lib";
 import { nanoid } from "nanoid";
 import Image from "next/image";
 import React from "react";

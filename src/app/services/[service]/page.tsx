@@ -1,6 +1,6 @@
-import Navbar from "@/app/components/Navbar";
-import Services from "@/app/components/Services";
-import { services } from "@/constants";
+import Navbar from "@/components/Navbar";
+import Services from "@/components/Services";
+import { services } from "@/lib";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";

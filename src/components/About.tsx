@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { MotiionDiv } from "./shared/MotionDiv";
+import Aurora from "./ui/Aurora";
 
 const aboutVarients = {
   hidden: { opacity: 0, x: -200 },
@@ -14,8 +15,9 @@ const About = () => {
   return (
     <section
       id="about"
-      className="bg-white text-black lg:mb-[22%]  overflow-hidden xl:mb-[10%] 2xl:mb-0"
+      className="text-black lg:mb-[22%]  overflow-hidden xl:mb-[10%] 2xl:mb-0"
     >
+   
       <div className="mx-auto max-w-screen-2xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:h-screen lg:grid-cols-2">
           <div className="relative z-10 lg:py-16">
@@ -38,7 +40,7 @@ const About = () => {
                 width={1200}
                 height={1200}
                 quality={100}
-                alt=""
+                alt="about image"
                 src="/about.jpg"
                 className="absolute inset-0 h-full w-full object-cover rounded-r-lg"
               />
@@ -67,22 +69,25 @@ const About = () => {
                 About Us
               </h5>
               <h2 className="text-2xl capitalize  sm:leading-[42px] font-semibold sm:text-3xl">
-                Origa is a community of developers united by a shared vision to
-                revolutionize the IT industry.
+                Origa Networks: Simplifying Digital Success, Amplifying Your
+                Business
               </h2>
 
               <p className="mt-4 text-gray-600 leading-7">
-                Our journey began with a simple idea: harness collaboration and
-                creativity to deliver exceptional results. We believe innovation
-                thrives where diverse perspectives and skills converge. That’s
-                why our community of developers brings unique expertise and a
-                relentless drive to push boundaries.
+                We make your digital success simple. With expert solutions just
+                for your needs, we craft impactful websites, data-driven
+                marketing strategies, and seamless IT solutions to help you
+                stand out. Whether you need a compelling brand identity,
+                high-performance digital tools, or a strategic marketing
+                approach, we ensure every aspect of your online presence is
+                designed for growth.
               </p>
               <p className="mt-4 text-gray-600 leading-7">
-                At Origa, continuous learning, open communication, and mutual
-                respect are core. We foster an environment where ideas are
-                exchanged, challenges are embraced, and success is a collective
-                achievement.
+                We listen. We strategize. We build. Our team of skilled
+                professionals is dedicated to delivering results that matter.
+                From understanding your unique goals to executing solutions that
+                drive impact, we make the digital journey effortless and
+                effective..
               </p>
               <a
                 href="#contact"

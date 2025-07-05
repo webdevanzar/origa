@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Footer from "./components/Footer";
-import SonerProvider from "./components/shared/SonnerProvider";
+import Footer from "@/components/Footer";
+import SonerProvider from "@/components/shared/SonnerProvider";
+import Aurora from "@/components/ui/Aurora";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -40,6 +41,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+         <div className="absolute inset-0 -z-10 bg-black">
+                <Aurora
+                  colorStops={["#FF3232", "#3A29FF", "#FF94B4"]}
+                  blend={0.8}
+                  amplitude={1.0}
+                  speed={0.4}
+                />
+              </div>
         {children}
         <Footer />
       </body>
