@@ -4,9 +4,12 @@ import emailjs from "@emailjs/browser";
 import { toast } from "sonner";
 const Contact = () => {
   const [loading, setLoadin] = useState(false);
-  const form = useRef<any>();
+  const form = useRef<HTMLFormElement | null>(null);
+
   const sendEmail = (e: any) => {
     e.preventDefault();
+    if (!form.current) return;
+    
     setLoadin(true);
 
     emailjs
@@ -56,10 +59,7 @@ const Contact = () => {
                       Address
                     </h2>
                     <h2 className="text-gray-800 text-base md:text-lg leading-8 tracking-wider mt-2">
-                      
-                     Origa Networks, near Bustand, Melattur, Kerala 679326
-
-
+                      Origa Networks, near Bustand, Melattur, Kerala 679326
                     </h2>
                   </div>
                   <div className="mt-4 md:mt-8">

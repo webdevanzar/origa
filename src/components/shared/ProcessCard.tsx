@@ -18,7 +18,7 @@ export const ProcessCard = ({
   gradientTo
 }: ProcessCardProps) => {
   return (
-    <div className="px-3">
+    <div className="px-3 cursor-pointer">
       <div className={`relative h-96 rounded-2xl p-8 bg-gradient-to-br ${gradientFrom} ${gradientTo} backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300 hover:transform hover:scale-105`}>
         {/* Icon */}
         <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center mb-6">

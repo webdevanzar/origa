@@ -1,50 +1,25 @@
 "use client";
 import Image from "next/image";
 import Slider from "react-slick";
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import "slick-carousel/slick/slick.css";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import Aurora from "./ui/Aurora";
-// import "slick-carousel/slick/slick-theme.css";
+import storyblokClient from "@/utils/storyblock";
 
 type ProjectType = {
   id: string;
   image: string;
-  title: string;
+  image2: string;
+  title: string; //max 30 characters
 };
 
 export const Projects = () => {
-  const projects: ProjectType[] = [
-    {
-      id: "1",
-      image: "/project1.jpg",
-      title: "Project title",
-    },
-    {
-      id: "2",
-      image: "/project1.jpg",
-      title: "Project title",
-    },
-    {
-      id: "3",
-      image: "/project1.jpg",
-      title: "Project title",
-    },
-    {
-      id: "4",
-      image: "/project1.jpg",
-      title: "Project title",
-    },
-    {
-      id: "5",
-      image: "/project1.jpg",
-      title: "Project title",
-    },
-  ];
+  const [projects, setProjects] = useState<ProjectType[]>([]);
 
   const [activeSlide, setActiveSlide] = React.useState(0);
-  const sliderRef = useRef<Slider>();
+  const sliderRef = useRef<Slider>(null);
 
   const settings = {
     centerMode: true,
@@ -70,6 +45,32 @@ export const Projects = () => {
       },
     ],
   };
+  console.log(projects);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const { data } = await storyblokClient.get("cdn/stories/projects", {
+          version: "published",
+        });
+
+        const raw = data.story.content.contents;
+        const formatted: ProjectType[] = raw.map((item: any, idx: number) => ({
+          id: item._uid || idx.toString(),
+          image: item.image1.filename,
+          image2: item.image2.filename,
+          title: item.title,
+        }));
+
+        setProjects(formatted);
+      } catch (err) {
+        console.error("Failed to fetch Storyblok data:", err);
+      }
+    };
+
+    fetchProjects();
+  }, []);
+  console.log(projects);
 
   return (
     <div className="relative py-5 xl:py-10 mix-blend-hue">
@@ -112,16 +113,23 @@ export const Projects = () => {
             {projects.map((item, index) => (
               <div
                 key={item.id}
-                className={`project-image relative w-[500px] h-[350px] md:h-[300px] 2xl:h-[350px] rounded-xl shadow-md outline-none flex flex-col items-center justify-center cursor-pointer `}
+                className={`group relative w-[500px] h-[350px] md:h-[300px] 2xl:h-[350px] rounded-xl shadow-md outline-none flex flex-col items-center justify-center cursor-pointer `}
               >
                 <Image
                   alt="projects"
                   src={item.image}
                   width={1000}
                   height={1000}
-                  className={`w-full h-full object-cover rounded-xl transition-opacity duration-700 ease-in-out `}
+                  className={`absolute w-full h-full object-cover rounded-xl transition-opacity duration-700 ease-in-out group-hover:opacity-0`}
                 />
-                <h2 className="text-2xl font-semibold xl:text-4xl pt-2 text-white">
+                <Image
+                  alt="hover-projects"
+                  src={item.image2}
+                  width={1000}
+                  height={1000}
+                  className={`absolute w-full h-full object-cover opacity-0 rounded-xl group-hover:opacity-100 transition-opacity duration-700 ease-in-out `}
+                />
+                <h2 className="absolute -bottom-10 xl:-bottom-12 text-2xl font-semibold xl:text-4xl pt-2 text-white">
                   {item.title}
                 </h2>
               </div>
